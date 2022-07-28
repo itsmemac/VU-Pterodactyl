@@ -50,4 +50,3 @@ This type of server uses more than 35GB in space where you have to upload the BF
 ![mount-edit.jpg](https://i.postimg.cc/NfdQNwt5/mount-edit.jpg)
 - Mount should also be mounted in mount tab of server settings for each servers you wish to have mount available
 - Wine Latest is the preferred image which uses Parker's latest wine generic image
-- Kindly ignore "steam user is not set." message in console during startup (this is used for steam games only).
