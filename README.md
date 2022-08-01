@@ -1,6 +1,9 @@
 ﻿
 # [Venice Unleashed - Pterodactyl Egg](https://veniceunleashed.net/)
 
+![License](https://img.shields.io/github/license/itsmemac/VU-Pterodactyl?style=plastic/badge.svg) ![Stable](https://github.com/itsmemac/VU-Pterodactyl/actions/workflows/stable.yml/badge.svg) ![Staging](https://github.com/itsmemac/VU-Pterodactyl/actions/workflows/staging.yml/badge.svg)
+
+
 Experience Battlefield 3 like never before
 VU /vi:ju:/ is a community-oriented Battlefield 3 modding platform that gives you back control of your gaming experience.
 
