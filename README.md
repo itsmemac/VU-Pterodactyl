@@ -1,9 +1,10 @@
-﻿
-# [Venice Unleashed - Pterodactyl Egg](https://veniceunleashed.net/)
+# [Venice Unleashed](https://veniceunleashed.net/) - Pterodactyl Egg and Docker Image
 
 ![License](https://img.shields.io/github/license/itsmemac/VU-Pterodactyl?style=plastic/badge.svg) ![Stable](https://github.com/itsmemac/VU-Pterodactyl/actions/workflows/stable.yml/badge.svg) ![Staging](https://github.com/itsmemac/VU-Pterodactyl/actions/workflows/staging.yml/badge.svg)
 
+Repository contains latest version of Venice Unleashed Egg for your [Pterodactyl panel](https://pterodactyl.io/) and Docker Image so you can create VU servers easily and have a working server in few seconds
 
+## ABOUT VU
 Experience Battlefield 3 like never before
 VU /vi:ju:/ is a community-oriented Battlefield 3 modding platform that gives you back control of your gaming experience.
 
@@ -18,6 +19,10 @@ VU /vi:ju:/ is a community-oriented Battlefield 3 modding platform that gives yo
 |  Game   |  Primary Port of server |
 | Harmony |           7948          |
 |  RCON   |          47200          |
+
+## STARTUP COMMAND
+
+    if [ ! -f /home/container/activated ]; then wine ~/vu/client/vu.com -gamepath ~/bf3 -activate -o_mail ${EMAIL} -o_pass ${PASSWORD}; touch /home/container/activated; else wine ~/vu/client/vu.com -gamepath ~/bf3 -serverInstancePath "$(winepath -w ~/vu/instance)" -server -dedicated -listen 0.0.0.0:$SERVER_PORT -mHarmonyPort ${HARMONY} -RemoteAdminPort 0.0.0.0:${RCON}; fi    
 
 ## EGG VARIANT
 
@@ -53,3 +58,4 @@ This type of server uses more than 35GB in space where you have to upload the BF
 ![mount-edit.jpg](https://i.postimg.cc/NfdQNwt5/mount-edit.jpg)
 - Mount should also be mounted in mount tab of server settings for each servers you wish to have mount available
 - Egg includes both stable and staging version of Wine which you can change in Startup tab of the server. Both works fine with current versions of VU but i recommend Staging version since it has to recent bugfixes but if you face any issues, use Stable version.
+
