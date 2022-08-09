@@ -4,17 +4,17 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2022-07-27T15:58:13-04:00",
+    "exported_at": "2022-08-09T06:07:31-04:00",
     "name": "Venice Unleashed [With Mount]",
     "author": "me@itsmemac.com",
-    "description": "Experience Battlefield 3 like never before\r\nVU \/vi:ju:\/ is a community-oriented Battlefield 3 modding platform that gives you back control of your gaming experience.",
+    "description": "Venice Unleashed Egg with mount support",
     "features": null,
     "docker_images": {
         "VU Ptero - Stable": "ghcr.io\/itsmemac\/vu-pterodactyl:main",
         "VU Ptero - Staging": "ghcr.io\/itsmemac\/vu-pterodactyl:staging"
     },
     "file_denylist": [],
-    "startup": "if [ ! -f \/home\/container\/activated ]; then wine ~\/vu\/client\/vu.com -gamepath ~\/bf3 -activate -o_mail ${EMAIL} -o_pass ${PASSWORD}; touch \/home\/container\/activated; else wine ~\/vu\/client\/vu.com -gamepath ~\/bf3 -serverInstancePath \"$(winepath -w ~\/vu\/instance)\" -server -dedicated -listen 0.0.0.0:$SERVER_PORT -mHarmonyPort ${HARMONY} -RemoteAdminPort 0.0.0.0:${RCON}; fi",
+    "startup": "if [ ! -f \/home\/container\/activated ]; then wine ~\/vu\/client\/vu.com -gamepath ~\/bf3 -activate -o_mail ${EMAIL} -o_pass ${PASSWORD}; touch \/home\/container\/activated; else wine ~\/vu\/client\/vu.com -gamepath ~\/bf3 -serverInstancePath \"$(winepath -w ~\/vu\/instance)\" -server -dedicated -${FREQUENCY} -listen 0.0.0.0:$SERVER_PORT -mHarmonyPort ${HARMONY} -RemoteAdminPort 0.0.0.0:${RCON}; fi",
     "config": {
         "files": "{}",
         "startup": "{\r\n    \"done\": \"Game successfully registered with Zeus\"\r\n}",
@@ -77,6 +77,16 @@
             "user_viewable": true,
             "user_editable": true,
             "rules": "numeric",
+            "field_type": "text"
+        },
+        {
+            "name": "Server Frequency",
+            "description": "30 - 30Hz (Default) \/\/ high60 - 60Hz High frequency mode \/\/ high120 - 120Hz High frequency mode",
+            "env_variable": "FREQUENCY",
+            "default_value": "30",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "in:30,high60,high120",
             "field_type": "text"
         }
     ]
