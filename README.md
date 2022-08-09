@@ -22,7 +22,7 @@ VU /vi:ju:/ is a community-oriented Battlefield 3 modding platform that gives yo
 
 ## STARTUP COMMAND
 
-    if [ ! -f /home/container/activated ]; then wine ~/vu/client/vu.com -gamepath ~/bf3 -activate -o_mail ${EMAIL} -o_pass ${PASSWORD}; touch /home/container/activated; else wine ~/vu/client/vu.com -gamepath ~/bf3 -serverInstancePath "$(winepath -w ~/vu/instance)" -server -dedicated -listen 0.0.0.0:$SERVER_PORT -mHarmonyPort ${HARMONY} -RemoteAdminPort 0.0.0.0:${RCON}; fi    
+    if [ ! -f /home/container/activated ]; then wine ~/vu/client/vu.com -gamepath ~/bf3 -activate -o_mail ${EMAIL} -o_pass ${PASSWORD}; touch /home/container/activated; else wine ~/vu/client/vu.com -gamepath ~/bf3 -serverInstancePath "$(winepath -w ~/vu/instance)" -server -dedicated -${FREQUENCY} -listen 0.0.0.0:$SERVER_PORT -mHarmonyPort ${HARMONY} -RemoteAdminPort 0.0.0.0:${RCON}; fi    
 
 ## EGG VARIANT
 
