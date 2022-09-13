@@ -58,4 +58,5 @@ This type of server uses more than 35GB in space where you have to upload the BF
 ![mount-edit.jpg](https://i.postimg.cc/NfdQNwt5/mount-edit.jpg)
 - Mount should also be mounted in mount tab of server settings for each servers you wish to have mount available
 - Egg includes both stable and staging version of Wine which you can change in Startup tab of the server. Both works fine with current versions of VU but i recommend Staging version since it has to recent bugfixes but if you face any issues, use Stable version.
+- Auto Update is disabled by default due to ongoing issue with VU auto updater causing issue with server startup. Investigating the root cause of the issue. Till then, disabling it.
 
