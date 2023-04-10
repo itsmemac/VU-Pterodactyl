@@ -4,7 +4,7 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2022-09-13T14:20:00-04:00",
+    "exported_at": "2023-04-10T18:18:56+05:30",
     "name": "Venice Unleashed [Without Mount]",
     "author": "me@itsmemac.com",
     "description": "Venice Unleashed Egg without mount support",
@@ -14,7 +14,7 @@
         "VU Ptero - Staging": "ghcr.io\/itsmemac\/vu-pterodactyl:staging"
     },
     "file_denylist": [],
-    "startup": "if [ ! -f \/home\/container\/activated ]; then wine ~\/vu\/client\/vu.com -gamepath ~\/bf3 -activate -o_mail ${EMAIL} -o_pass ${PASSWORD}; touch \/home\/container\/activated; else wine ~\/vu\/client\/vu.com -gamepath ~\/bf3 -serverInstancePath \"$(winepath -w ~\/vu\/instance)\" -server -dedicated -noUpdate -${FREQUENCY} -listen 0.0.0.0:$SERVER_PORT -mHarmonyPort ${HARMONY} -RemoteAdminPort 0.0.0.0:${RCON}; fi",
+    "startup": "if [ ! -f \/home\/container\/activated ]; then wine ~\/vu\/client\/vu.com -gamepath ~\/bf3 -activate -o_mail ${EMAIL} -o_pass ${PASSWORD}; touch \/home\/container\/activated; else wine ~\/vu\/client\/vu.com -gamepath ~\/bf3 -serverInstancePath \"$(winepath -w ~\/vu\/instance)\" -server -dedicated -noUpdate -${FREQUENCY} -maxPlayers ${MAX_PLAYER} -listen 0.0.0.0:$SERVER_PORT -mHarmonyPort ${HARMONY} -RemoteAdminPort 0.0.0.0:${RCON}; fi",
     "config": {
         "files": "{}",
         "startup": "{\r\n    \"done\": \"Game successfully registered with Zeus\"\r\n}",
@@ -66,7 +66,7 @@
             "default_value": "7948",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "numeric",
+            "rules": "required|numeric",
             "field_type": "text"
         },
         {
@@ -76,7 +76,7 @@
             "default_value": "47200",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "numeric",
+            "rules": "required|numeric",
             "field_type": "text"
         },
         {
@@ -87,6 +87,16 @@
             "user_viewable": true,
             "user_editable": true,
             "rules": "in:30,high60,high120",
+            "field_type": "text"
+        },
+        {
+            "name": "Maximum Player Count",
+            "description": "Sets the maximum players that are allowed to set with vars.maxPlayers & vars.maxSpectators combined.",
+            "env_variable": "MAX_PLAYER",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|numeric",
             "field_type": "text"
         }
     ]
