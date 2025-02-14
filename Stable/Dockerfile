@@ -10,6 +10,7 @@ RUN dpkg --add-architecture i386 \
         && apt update -y \
         && apt install -y --no-install-recommends \
         gnupg2 \
+        gpg \
         tzdata \
         software-properties-common \
         libntlm0 \
@@ -27,7 +28,9 @@ RUN mkdir -p /etc/apt/keyrings \
         && echo "deb [signed-by=/etc/apt/keyrings/winehq.gpg] https://dl.winehq.org/wine-builds/debian/ bullseye main" > /etc/apt/sources.list.d/winehq.list
 
 # Add OpenSUSE Wine repository securely
-RUN wget -qO- https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_11/Release.key | gpg --dearmor -o /etc/apt/keyrings/wine-obs.gpg \
+RUN mkdir -p /etc/apt/keyrings \
+        && chmod 755 /etc/apt/keyrings \
+        && wget -qO- https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_11/Release.key | gpg --dearmor --batch --yes -o /etc/apt/keyrings/wine-obs.gpg \
         && echo "deb [signed-by=/etc/apt/keyrings/wine-obs.gpg] http://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_11 ./" > /etc/apt/sources.list.d/wine-obs.list
 
 # Install WineHQ with recommended dependencies
@@ -54,4 +57,3 @@ WORKDIR /home/container
 
 COPY ./entrypoint.sh /entrypoint.sh
 CMD ["/bin/bash", "/entrypoint.sh"]
-        
