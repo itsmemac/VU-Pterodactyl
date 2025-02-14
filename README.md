@@ -4,6 +4,8 @@
 
 Repository contains latest version of Venice Unleashed Egg for your [Pterodactyl panel](https://pterodactyl.io/) and Docker Image so you can create VU servers easily and have a working server in few seconds
 
+This uses Wine yolk format of [Pelican/Parkervcp](https://github.com/pelican-eggs/yolks/tree/master/wine)
+
 ## ABOUT VU
 Experience Battlefield 3 like never before
 VU /vi:ju:/ is a community-oriented Battlefield 3 modding platform that gives you back control of your gaming experience.
