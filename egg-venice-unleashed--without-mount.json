@@ -4,7 +4,7 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2023-04-10T18:18:56+05:30",
+    "exported_at": "2025-02-15T20:15:22+05:30",
     "name": "Venice Unleashed [Without Mount]",
     "author": "me@itsmemac.com",
     "description": "Venice Unleashed Egg without mount support",
@@ -14,7 +14,7 @@
         "VU Ptero - Staging": "ghcr.io\/itsmemac\/vu-pterodactyl:staging"
     },
     "file_denylist": [],
-    "startup": "if [ ! -f \/home\/container\/activated ]; then wine ~\/vu\/client\/vu.com -gamepath ~\/bf3 -activate -o_mail ${EMAIL} -o_pass ${PASSWORD}; touch \/home\/container\/activated; else wine ~\/vu\/client\/vu.com -gamepath ~\/bf3 -serverInstancePath \"$(winepath -w ~\/vu\/instance)\" -server -dedicated -noUpdate -${FREQUENCY} -maxPlayers ${MAX_PLAYER} -listen 0.0.0.0:$SERVER_PORT -mHarmonyPort ${HARMONY} -RemoteAdminPort 0.0.0.0:${RCON}; fi",
+    "startup": "if [ ! -f \/home\/container\/activated ]; then wine ~\/vu\/client\/vu.com -gamepath ~\/bf3 -activate -ea_token ${AUTHTOKEN}; touch \/home\/container\/activated; else wine ~\/vu\/client\/vu.com -gamepath ~\/bf3 -serverInstancePath \"$(winepath -w ~\/vu\/instance)\" -server -dedicated -noUpdate -${FREQUENCY} -maxPlayers ${MAX_PLAYER} -listen 0.0.0.0:$SERVER_PORT -mHarmonyPort ${HARMONY} -RemoteAdminPort 0.0.0.0:${RCON}; fi",
     "config": {
         "files": "{}",
         "startup": "{\r\n    \"done\": \"Game successfully registered with Zeus\"\r\n}",
@@ -40,23 +40,13 @@
             "field_type": "text"
         },
         {
-            "name": "Origin Account Email",
-            "description": "Your Origin Account Email to validate install",
-            "env_variable": "EMAIL",
-            "default_value": "example@example.com",
+            "name": "EA Auth Token",
+            "description": "EA Auth token provided by VU launcher by running -activate -lsx",
+            "env_variable": "AUTHTOKEN",
+            "default_value": "652176etgy78t67qr367r376",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "email",
-            "field_type": "text"
-        },
-        {
-            "name": "Origin Account Password",
-            "description": "Your Origin Account Password to validate install",
-            "env_variable": "PASSWORD",
-            "default_value": "Password@123",
-            "user_viewable": true,
-            "user_editable": true,
-            "rules": "string",
+            "rules": "required|string",
             "field_type": "text"
         },
         {
