@@ -14,7 +14,7 @@ VU /vi:ju:/ is a community-oriented Battlefield 3 modding platform that gives yo
  - Venice Unleashed Account linked to EA/Origin Account. [Refer here on how to link](https://docs.veniceunleashed.net/general/playing/#creating-an-account-and-linking-your-origin-account)
  - Server key generated from Venice Unleashed [key management portal](https://veniceunleashed.net/keys) (Download the generated key file)
  - Copy of Battlefield 3 (full and up-to-date installation)
- - Token generated using `-activate -lsx` as launch aurgument in windows VU instance [Refer Here](https://docs.veniceunleashed.net/general/args/) (Token is shown on the screen)
+ - Token generated using `-activate -lsx` as launch aurgument in windows VU instance [Refer Here](https://docs.veniceunleashed.net/hosting/setup-win/#activating-the-game) (Token is shown on the screen)
 
 ## PORTS
 
