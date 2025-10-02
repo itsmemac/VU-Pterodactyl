@@ -1,3 +1,5 @@
+# This Pterodactyl Egg doesn't work anymore due to changes in EA Auth and Wine . Use the [Official VU Pterodactyl/Pelican Egg](https://github.com/pelican-eggs/games-standalone/tree/main/venice_unleashed) instead for updated and working version of this Egg
+
 # [Venice Unleashed](https://veniceunleashed.net/) - Pterodactyl Egg and Docker Image
 
 ![License](https://img.shields.io/github/license/itsmemac/VU-Pterodactyl?style=plastic/badge.svg) ![Stable](https://github.com/itsmemac/VU-Pterodactyl/actions/workflows/stable.yml/badge.svg) ![Staging](https://github.com/itsmemac/VU-Pterodactyl/actions/workflows/staging.yml/badge.svg)
